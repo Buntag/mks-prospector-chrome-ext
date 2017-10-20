@@ -15,17 +15,18 @@ input:focus {
 .LoadMore.loading_true{left: 90px;font-style: italic;}
 .mksph_logout{visibility: hidden;}
 .makesbridge_plugin {
- right: 0;
-   z-index: 999;
-   position: fixed;
-   overflow-y: scroll;
-   height: 100%;
-   width: 380px;
-   background: #f8f8fb;
-   box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.2);
-   -webkit-transition: all 1.2s ease-in-out;
-   -moz-transition: all 1.2s ease-in-out;
-   -o-transition: all 1.2s ease-in-out;
+  right: 0;
+  z-index: 99;
+  position: fixed;
+  overflow-y: scroll;
+  height: 100%;
+  width: 380px;
+  background: #f8f8fb;
+  box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.2);
+  -webkit-transition: all 1.2s ease-in-out;
+  -moz-transition: all 1.2s ease-in-out;
+  -o-transition: all 1.2s ease-in-out;
+  -webkit-font-smoothing: antialiased;
 }
 
 html, body{ height:100%;}
@@ -38,7 +39,7 @@ html, body{ height:100%;}
 .container{
   position: relative;
 }
-.mksph_icon_close, .mksph_icon_menu{
+.mksph_icon_close, .mksph_icon_menu, .mksph_icon_back {
  -webkit-transition: all 0.3s ease-in-out;
  -moz-transition: all 0.3s ease-in-out;
  -o-transition: all 0.3s ease-in-out;
@@ -57,7 +58,7 @@ html, body{ height:100%;}
    -webkit-transition: all 0.3s ease-in-out;
    -moz-transition: all 0.3s ease-in-out;
    -o-transition: all 0.3s ease-in-out;
-   padding: 7px 0 0 0;
+   padding: 0px 0 0 0;
    -webkit-box-sizing: border-box;
    -moz-box-sizing: border-box;
    box-sizing: border-box;
@@ -76,18 +77,8 @@ html, body{ height:100%;}
 .mksiconplugin a span{
    color: #0e7bf7;
    font-size: 24px;
-   backgrou;
 }
-.makesbridge_plugin{
-   right: 0;
-   z-index: 99;
-   position: fixed;
-   overflow-y: scroll;
-   height: 100%;
-   width: 380px;
-   background: #f8f8fb;
-   box-shadow: 0 8px 30px 0 rgba(0, 0, 0, 0.2);
-}
+
 
 .mkspanel{
 }
@@ -140,13 +131,13 @@ html, body{ height:100%;}
 }
 
 .mks_logo{
- background : url("chrome-extension://__MSG_@@extension_id__/img/icon48.png");
- background-repeat: no-repeat;
- background-position: center;
- height: 48px;
- width: 48px;
- display:block;
- margin:auto;
+  background : url("chrome-extension://__MSG_@@extension_id__/img/mks_icon_c.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32px;
+  width: 40px;
+  display:block;
+  margin:auto;
 }
 
 .mks_logo_img{
@@ -314,7 +305,7 @@ div.tab button.active {
 /* Style the tab content */
 .tabcontent {
    /*display: none;*/
-   border-bottom: 1px solid #ccc;
+   border-bottom: 2px solid #f8f8fb;
    border-top: none;
    background: #fff;
    }
@@ -491,31 +482,43 @@ Login form CSS
  min-height: 135px;
 }
 .mksph_cardbox form input{
- width: 287px;
- padding: 8px 10px;
+ width: 100%;
+ padding: 12px 10px;
  margin: 0 0 10px;
  border-radius: 2px;
- border: 1px solid #ddd;
+ border: none;
+ -webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+background-color: #f4f5f9;
 }
 input[type="text"],textarea{
- width: 287px;
  padding: 8px 10px;
  margin: 0 0 10px;
  border-radius: 2px;
- border: 1px solid #ddd;
+ width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #f1f4f9;
 }
 .mksph_login_btn{
  background: #23CE8C;
  color: #fff;
- width: 180px;
+ width: 50%;
  border: 0;
- padding: 10px;
+ padding: 12px 10px;
  text-transform: uppercase;
- box-shadow: 1px 1px 8px -2px #23CE8C;
+ box-shadow: 0px 2px 9px -2px #20b97d;
  border-radius: 2px;
  cursor: pointer;
  font-size: 14px;
 }
+
+.mksph_login_btn:disabled{
+  box-shadow: none;
+}
+
 /*===========================================
 Search Bar Styling
 ============================================*/
@@ -536,7 +539,10 @@ Search Bar Styling
    line-height: 28px;
 }
 .searchBar input{
- width: 320px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
 .mksph_icon_search{
    position: absolute;
@@ -580,7 +586,22 @@ START contact found page
 .list_contact_found_height{
  min-height: 270px;
  max-height: 270px;
- overflow-y: scroll;
+ overflow-y: auto;
+}
+
+.list_contact_found_height::-webkit-scrollbar {
+    width: 7px;
+}
+
+.list_contact_found_height::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 6px inset;
+    border-radius: 10px;
+}
+
+.list_contact_found_height::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+    background-color: #c2c2c2;
 }
 .contact_found{
  background: #fff;
@@ -1196,7 +1217,15 @@ START Edit Selected Contact Found
    border-radius: 2px;
    width: 73px;
    float: right;
+   background: #20b97d;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
 }
+
+.scfe_save_wrap:hover{
+  box-shadow: 0px 3px 11px -1px #20b97d;
+}
+
 .scfe_save_i_md{
  height: 30px;
  text-align: center;
@@ -1250,6 +1279,12 @@ a:hover, a:focus {
    width: 76px;
    float: right;
    margin: 0 0 0 7px;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  background: #a2a9b0;
+}
+.scfe_close_wrap:hover{
+  box-shadow: 0px 3px 11px -1px #a2a9b0;
 }
 .scfe_close_i_md{
  height: 30px;
@@ -1284,11 +1319,27 @@ span.mksph_contact_value {
    color: #016EFD;
 }
 .tags-contents,.csfields-contents {
- min-height: 70px;
- max-height: 165px;
- overflow-y: scroll;
- padding: 15px 0 0px;
- position: relative;
+  min-height: 70px;
+  max-height: 165px;
+  overflow-y: scroll;
+  padding: 0px 0 0px;
+  position: relative;
+  width: 100%;
+}
+
+.tags-contents::-webkit-scrollbar {
+    width: 7px;
+}
+
+.tags-contents::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 6px inset;
+    border-radius: 10px;
+}
+
+.tags-contents::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+    background-color: #c2c2c2;
 }
 
 .addTag{
@@ -1300,6 +1351,30 @@ span.mksph_contact_value {
    text-transform: lowercase;
    cursor:pointer;
 }
+
+.add_tag_f_wrap{
+  margin: 0 0 15px 0;
+}
+
+.add_tag_f_wrap input {
+  padding: 8px 10px;
+  margin: 0 0 2px;
+  border-radius: 2px;
+  width: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  border: 1px solid #f1f4f9;
+}
+
+.add_tag_f_wrap input:focus {
+    transition: 0.5s;
+    outline: none;
+    border-color: #0e7bf7;
+}
+
+.add_tag_f_wrap{}
+
 .tags-contents ul{
    margin: 0;
    padding: 0;
@@ -1583,6 +1658,20 @@ position:relative; z-index:9;
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.act_row_wrapper::-webkit-scrollbar {
+    width: 7px;
+}
+
+.act_row_wrapper::-webkit-scrollbar-track {
+    box-shadow: rgba(0, 0, 0, 0.14) 0px 0px 6px inset;
+    border-radius: 10px;
+}
+
+.act_row_wrapper::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    /*-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); */
+    background-color: #c2c2c2;
+}
 .LoadMore-wrapper{
   position: relative;
    border-top: 1px solid #f8f8fb;
@@ -1646,4 +1735,9 @@ position:relative; z-index:9;
 }
 .new_activities .act_row .camp {
     background: url("chrome-extension://__MSG_@@extension_id__/img/act-campaign.png") no-repeat scroll 0 4px rgba(0, 0, 0, 0);
+}
+
+span.icon.mksicon-OpenMail {
+    font-size: 14px;
+    line-height: 24px ! important;
 }

@@ -152,7 +152,7 @@ class ContactDetailInfo extends Component{
                   <h3>Tags</h3>
                   <a className="addTag" onClick={showAddTag => { this.setState({showAddBox : true}) } } >Add Tag</a>
                   <ToggleDisplay show={this.state.showAddBox}>
-                    <div className="">
+                    <div className="add_tag_f_wrap">
                       <input
                         type="text"
                         value={this.state.tagName}

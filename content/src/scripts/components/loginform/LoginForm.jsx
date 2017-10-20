@@ -23,6 +23,7 @@ class LoginForm extends Component {
                     <input name="username" type="text" disabled={this.state.disabled} placeholder="Enter your username" value={this.state.username} onChange = {event => this.setState({username : event.target.value})}  onKeyPress={this.handleKeyPress.bind(this)} />
                     <input name="password" type="password" disabled={this.state.disabled} placeholder="Enter your password" value={this.state.password} onChange = {event => this.setState({password : event.target.value})} onKeyPress={this.handleKeyPress.bind(this)} />
                     <button name="submit" type="button" disabled={this.state.disabled} className="mksph_login_btn mksph-pull-right ripple" onClick = {this.onClickOfButton.bind(this)} id="submitForm">Login</button>
+                    <div className="clr"></div>
                 </form>
             </div>
           </div>
