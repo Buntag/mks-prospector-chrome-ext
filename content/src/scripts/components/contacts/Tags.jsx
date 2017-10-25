@@ -13,7 +13,7 @@ const ContactTags = (props) => {
       <li key={tag}>
         <a className="tag">
           <span>{decodeHTML(tag)}</span>
-          <i className="icon cross" onClick={() => deleteTag(tag) }></i>
+          <i className="icon mksicon-Close" onClick={() => deleteTag(tag) }></i>
         </a>
 
       </li>

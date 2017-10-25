@@ -171,7 +171,7 @@ class ContactInfo extends Component{
                                     <button className={`tablinks ripple ${this.state.contactActive}`} onClick={switchTab => { this.setState({showContacts:true,showActivity:false,activityActive:'',contactActive:'active'})} }>Contact</button>
                                     <button className={`tablinks ripple ${this.state.activityActive}`} onClick={switchTab => { this.setState({showContacts:false,showActivity:true,activityActive:'active',contactActive:''}) } } id="defaultOpen">Activity</button>
                                     <div className="score">
-                                      <i className="icon score"></i>
+                                      <i className="icon mksicon-AwardRibbon"></i>
                                       +
                                       <span className="score-value">{this.state.score}</span>
                                     </div>
